@@ -200,3 +200,11 @@ export const images = {
     trash,
     user,
 };
+
+
+export const ApplicationScreens= {
+    Home_Tab:'Home_tab',
+    Profile:'Profile',
+    Cart:'cart',
+    Search:'search'
+}

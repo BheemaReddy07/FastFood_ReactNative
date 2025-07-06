@@ -5,7 +5,7 @@ import CustomButton from '../components/CustomButton'
 import { Link } from '@react-navigation/native'
 import AuthLayout from '../components/AuthLayout'
 import { signIn } from '../lib/appwrite'
-
+import * as Sentry from '@sentry/react-native'
 const SignIn = () => {
     const [form, setForm] = useState({ email: '', password: '' })
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,6 +18,7 @@ const SignIn = () => {
             // go to home page
         } catch (error) {
             Alert.alert('Error', error.message);
+            Sentry.captureEvent(error);
         }
         finally {
             setIsSubmitting(false)

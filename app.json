@@ -23,8 +23,18 @@
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "bundler":"metro",
+      "bundler": "metro",
       "favicon": "./assets/images/bacon.png"
-    }
+    },
+    "plugins": [
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "react-native",
+          "organization": "fastfoods"
+        }
+      ]
+    ]
   }
 }
