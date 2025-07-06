@@ -1,20 +1,30 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Alert, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 import AuthLayout from '../components/AuthLayout';
+import { createUser } from '../lib/appwrite';
 
 const SignUp = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '' })
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const submit = () => {
-    Alert.alert("signin button clicked")
+  const submit = async () => {
+    const { name, email, password } = form;
+    if (!name || !email || !password) return Alert.alert('Error', 'Please enter valid email & password')
+    setIsSubmitting(true)
+    try {
+      await createUser({ email, password, name })
+      // go to home page
+    } catch (error) {
+      Alert.alert('Error', error.message);
+    } finally {
+      setIsSubmitting(false)
+    }
+
   }
 
   return (
     <AuthLayout>
-
-
       <View className="gap-10 bg-white rounded-lg p-5 mt-5">
         <CustomInput
           placeholder='Enter your Name'

@@ -4,12 +4,24 @@ import CustomInput from '../components/CustomInput'
 import CustomButton from '../components/CustomButton'
 import { Link } from '@react-navigation/native'
 import AuthLayout from '../components/AuthLayout'
+import { signIn } from '../lib/appwrite'
 
 const SignIn = () => {
     const [form, setForm] = useState({ email: '', password: '' })
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const submit = () => {
-        Alert.alert("signin button clicked")
+    const submit = async () => {
+        const { email, password } = form;
+        if (!email || !password) return Alert.alert('Error', "please enter a valid Email and Password")
+        setIsSubmitting(true)
+        try {
+            await signIn({ email, password })
+            // go to home page
+        } catch (error) {
+            Alert.alert('Error', error.message);
+        }
+        finally {
+            setIsSubmitting(false)
+        }
     }
 
     return (
