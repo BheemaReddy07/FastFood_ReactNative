@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import "./global.css"
+import { useFonts } from 'expo-font';
+import { Text, View } from "react-native";
+import HomeTab from "./screens/HomeTab";
+import SignIn from "./screens/SignIn";
+import AuthLayout from "./components/AuthLayout";
+import SignUp from "./screens/SignUp";
 export default function App() {
+  const [fontsLoaded] = useFonts({
+  'Quicksand-Regular': require('./assets/fonts/Quicksand-Regular.ttf'),
+  'Quicksand-Bold': require('./assets/fonts/Quicksand-Bold.ttf'),
+  'Quicksand-SemiBold': require('./assets/fonts/Quicksand-SemiBold.ttf'),
+  'Quicksand-Medium': require('./assets/fonts/Quicksand-Medium.ttf'),
+  'Quicksand-Light': require('./assets/fonts/Quicksand-Light.ttf'),
+});
+
+if (!fontsLoaded) return null;
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+       <AuthLayout>
+        <SignUp />
+       </AuthLayout>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
