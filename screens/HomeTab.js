@@ -6,7 +6,9 @@ import { images, offers } from '../utils/constants'
 import cn from 'clsx';
 import { TouchableOpacity } from 'react-native'
 import CartButton from '../components/cartButton'
+import { useNavigation } from '@react-navigation/native'
 const HomeTab = () => {
+    const navigation = useNavigation();
     return (
         <SafeAreaView className="flex-1 bg-white">
             <FlatList
@@ -44,7 +46,7 @@ const HomeTab = () => {
                         <CartButton />
 
                     </View>
-    )}
+                )}
             />
         </SafeAreaView>
     )
