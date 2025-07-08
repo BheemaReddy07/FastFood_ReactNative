@@ -2,6 +2,8 @@ import { FlatList, Platform, StyleSheet, Text, TouchableOpacity, View } from 're
 import React, { useState } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import cn from 'clsx'
+import useAppwrite from '../lib/useAppwrite'
+import { getCategories } from '../lib/appwrite'
 const Filter = ({ categories }) => {
    const route = useRoute();
    const navigation = useNavigation();

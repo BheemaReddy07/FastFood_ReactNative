@@ -9,15 +9,28 @@ import CartButton from '../components/cartButton'
 import { useNavigation } from '@react-navigation/native'
 const HomeTab = () => {
     const navigation = useNavigation();
+    const navigateToSearch = (category) => {
+        navigation.navigate('search', { category });
+    };
     return (
         <SafeAreaView className="flex-1 bg-white">
             <FlatList
                 data={offers}
                 renderItem={({ item, index }) => {
                     const isEven = index % 2 == 0;
+                    let category;
+                    if (index === 0) {
+                        category = '686ceca2001bee7e5e58';
+                    } else if (index === 1) {
+                        category = '686ceca30024465bb069';
+                    } else if (index === 2) {
+                        category = '686ceca20034bda8047b';
+                    } else if (index === 3) {
+                        category = '686ceca3000d18ee3d9b';
+                    }
                     return (
                         <View>
-                            <Pressable className={cn("w-full h-48 my-3 rounded-xl overflow-hidden shadow-lg flex items-center gap-5", isEven ? "flex-row-reverse" : "flex-row")} style={{ backgroundColor: item.color }} android_ripple={{ color: "#fffff22" }}>
+                            <Pressable onPress={() => navigateToSearch(category)} className={cn("w-full h-48 my-3 rounded-xl overflow-hidden shadow-lg flex items-center gap-5", isEven ? "flex-row-reverse" : "flex-row")} style={{ backgroundColor: item.color }} android_ripple={{ color: "#fffff22" }}>
                                 {({ pressed }) => (
                                     <Fragment>
                                         <View className={"w-1/2 h-full"}>

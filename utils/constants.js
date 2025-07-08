@@ -40,7 +40,7 @@ import pizzaOne from "../assets/images/pizza-one.png";
 import salad from "../assets/images/salad.png";
 import success from "../assets/images/success.png";
 import tomatoes from "../assets/images/tomatoes.png";
-
+import sandwich from '../assets/images/a-flavorful-club-sandwich-with-turkey-bacon-and-fresh-vegetables-sliced-and-isolated-on-a-transparent-background-free-png14.webp'
 export const CATEGORIES = [
     {
         id: "1",
@@ -73,8 +73,8 @@ export const offers = [
     },
     {
         id: 2,
-        title: "BURGER BASH",
-        image: burgerTwo,
+        title: "SandWich Delight",
+        image: sandwich,
         color: "#DF5A0C",
     },
     {
