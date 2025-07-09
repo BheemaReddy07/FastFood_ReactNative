@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/images/bacon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    
     "splash": {
       "image": "./assets/images/burger-one.png",
       "resizeMode": "contain",
@@ -27,16 +27,6 @@
       "bundler": "metro",
       "favicon": "./assets/images/burger-one.png"
     },
-    "plugins": [
-      [
-        "@sentry/react-native/expo",
-        {
-          "url": "https://sentry.io/",
-          "project": "react-native",
-          "organization": "fastfoods"
-        }
-      ]
-    ],
     "extra": {
       "eas": {
         "projectId": "5bc23f50-82f3-4ed3-a247-91719254a983"
