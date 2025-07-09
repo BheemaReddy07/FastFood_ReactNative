@@ -19,7 +19,7 @@ const SignUp = () => {
     try {
     const newUser =  await createUser({ email, password, name })
     setUser(newUser)
-    navigation.replaceParams('MainTab')
+    navigation.replace('MainTab')
     } catch (error) {
       Alert.alert('Error', error.message);
     } finally {

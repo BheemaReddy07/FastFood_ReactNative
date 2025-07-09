@@ -83,12 +83,15 @@ const MainTab = () => {
 };
 
 export const NavigationController = () => {
-    const {user,isLoading} = useAuthStore();
+    const { user, isLoading } = useAuthStore();
+    useEffect(() => {
+        useAuthStore.getState().fetchAuthenticatedUser();
+    }, []);
 
 
     if (isLoading) return <Text>Loading data</Text>
     return (
-        <NavigationContainer>
+        <NavigationContainer >
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 {user ? (
                     <Stack.Screen name="MainTab" component={MainTab} />

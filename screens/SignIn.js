@@ -6,18 +6,24 @@ import { Link, useNavigation } from '@react-navigation/native'
 import AuthLayout from '../components/AuthLayout'
 import { signIn } from '../lib/appwrite'
 import * as Sentry from '@sentry/react-native'
+import useAuthStore from '../store/auth.store'
 const SignIn = () => {
     const navigation = useNavigation();
     const [form, setForm] = useState({ email: '', password: '' })
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const { setUser } = useAuthStore();
     const submit = async () => {
         const { email, password } = form;
         if (!email || !password) return Alert.alert('Error', "please enter a valid Email and Password")
         setIsSubmitting(true)
         try {
-            await signIn({ email, password })
-            navigation.navigate('MainTab')
+            const newUser = await signIn({ email, password })
+            console.log('SignIn result:', newUser);
+            setUser(newUser)
+            console.log('Navigating to MainTab');
+            navigation.replace('MainTab')
         } catch (error) {
+            console.error('SignIn error:', error);
             Alert.alert('Error', error.message);
             Sentry.captureEvent(error);
         }
