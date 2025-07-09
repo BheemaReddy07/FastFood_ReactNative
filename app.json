@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "fastfood-reactnative",
-    "slug": "fastfood-reactnative",
+    "name": "fastfoods",
+    "slug": "fastfoods",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/bacon.png",
@@ -20,7 +20,8 @@
         "foregroundImage": "./assets/images/burger-one.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.bheemareddy07.fastfoodreactnative"
     },
     "web": {
       "bundler": "metro",
@@ -35,6 +36,11 @@
           "organization": "fastfoods"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "5bc23f50-82f3-4ed3-a247-91719254a983"
+      }
+    }
   }
 }
