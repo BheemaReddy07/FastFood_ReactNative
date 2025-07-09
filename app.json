@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "fastfoods",
-    "slug": "fastfoods",
+    "name": "fastfood-reactnative",
+    "slug": "fastfood-reactnative",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/bacon.png",
