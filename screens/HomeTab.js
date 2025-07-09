@@ -10,7 +10,7 @@ import { useNavigation } from '@react-navigation/native'
 const HomeTab = () => {
     const navigation = useNavigation();
     const navigateToSearch = (category) => {
-        navigation.navigate('search', { category });
+        navigation.navigate('Search', { category });
     };
     return (
         <SafeAreaView className="flex-1 bg-white">

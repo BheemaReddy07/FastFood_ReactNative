@@ -30,4 +30,5 @@ const useAuthStore = create((set)=>({
     }
 }))
 
+useAuthStore.getState().fetchAuthenticatedUser();
 export default useAuthStore

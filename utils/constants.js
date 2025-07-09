@@ -204,7 +204,10 @@ export const images = {
 
 export const ApplicationScreens= {
     Home_Tab:'Home_tab',
+    Home_Stack:'Home_stack',
     Profile:'Profile',
-    Cart:'cart',
-    Search:'search'
+    Cart:'Cart',
+    Search:'Search',
+    SignIn:'SignIn',
+    SignUp:'SignUp'
 }

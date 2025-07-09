@@ -2,11 +2,12 @@ import { Alert, Button, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import CustomInput from '../components/CustomInput'
 import CustomButton from '../components/CustomButton'
-import { Link } from '@react-navigation/native'
+import { Link, useNavigation } from '@react-navigation/native'
 import AuthLayout from '../components/AuthLayout'
 import { signIn } from '../lib/appwrite'
 import * as Sentry from '@sentry/react-native'
 const SignIn = () => {
+    const navigation = useNavigation();
     const [form, setForm] = useState({ email: '', password: '' })
     const [isSubmitting, setIsSubmitting] = useState(false);
     const submit = async () => {
@@ -15,7 +16,7 @@ const SignIn = () => {
         setIsSubmitting(true)
         try {
             await signIn({ email, password })
-            // go to home page
+            navigation.navigate('MainTab')
         } catch (error) {
             Alert.alert('Error', error.message);
             Sentry.captureEvent(error);
@@ -49,8 +50,7 @@ const SignIn = () => {
                 />
                 <View className="flex justify-center mt-5 flex-row gap-2">
                     <Text className="base-regular text-gray-100">Don't have an account?</Text>
-                    <Text className="base-bold text-primary">Sign Up</Text>
-                    {/* here link have to change */}
+                    <Text onPress={() => navigation.navigate('SignUp')} className="base-bold text-primary">Sign Up</Text>
                 </View>
             </View>
         </AuthLayout>

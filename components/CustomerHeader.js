@@ -7,7 +7,7 @@ const CustomerHeader = ({ title }) => {
     const navigation = useNavigation()
     return (
         <View className="W-full flex flex-row items-center justify-between mb-10">
-            <TouchableOpacity onPress={() => navigation.navigate('search')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Search')}>
                 <Image source={images.arrowBack} className='size-5' resizeMode='contain' />
             </TouchableOpacity>
             {title && <Text clasName="base-semibold">{title}</Text>}
