@@ -24,7 +24,7 @@ const Cart = () => {
   const { items, getTotalItems, getTotalPrice } = useCartStore();
   const totalItems = getTotalItems();
   const totalPrice = getTotalPrice()
-  console.log(items)
+  
   return (
     <SafeAreaView className="bg-white h-full">
       <FlatList

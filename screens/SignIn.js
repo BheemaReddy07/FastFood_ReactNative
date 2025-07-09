@@ -18,9 +18,9 @@ const SignIn = () => {
         setIsSubmitting(true)
         try {
             const newUser = await signIn({ email, password })
-            console.log('SignIn result:', newUser);
+             
             setUser(newUser)
-            console.log('Navigating to MainTab');
+          
             navigation.replace('MainTab')
         } catch (error) {
             console.error('SignIn error:', error);

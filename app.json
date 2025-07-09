@@ -8,7 +8,7 @@
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/bacon.png",
+      "image": "./assets/images/burger-one.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,14 +17,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/bacon.png",
+        "foregroundImage": "./assets/images/burger-one.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
       "bundler": "metro",
-      "favicon": "./assets/images/bacon.png"
+      "favicon": "./assets/images/burger-one.png"
     },
     "plugins": [
       [

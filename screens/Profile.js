@@ -10,7 +10,7 @@ import CustomerHeader from '../components/CustomerHeader';
 const Profile = () => {
   const navigation = useNavigation();
   const { user, logout: clearUser } = useAuthStore();
-  console.log(user.avatar)
+  
   const handleLogout = async () => {
     try {
       await logout();
